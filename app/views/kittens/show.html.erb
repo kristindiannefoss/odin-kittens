@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="kitten-image">
+    <div class="image-frame-lrg">
+      <%= image_tag @kitten.image_url, class: "kitten-pic" %>
+    </div>
+  </div>
+  <div class="kitten-info">
+    <h1><%= @kitten.name %></h1>
+    <h3><%= @kitten.age %></h3>
+    <h3><%= @kitten.cuteness %></h3>
+    <h3><%= @kitten.softness %></h3>
+  </div>
+</div>
+
+<%= button_to "Edit Kitten", edit_kitten_path(@kitten), method: :get, class: "btn btn-default"  %>
+
+<%= button_to "Delete Kitten", delete_kitten_path(@kitten), method: :delete, class: "btn btn-default" %>

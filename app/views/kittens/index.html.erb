@@ -1,0 +1,53 @@
+
+<div class="container">
+  <center>
+<h1>KITTENS!</h1>
+  </center>
+  <div class="sized-table">
+    <table class="table-striped">
+      <tr>
+        <th>
+          <h4>Kitten Picture</h4>
+        </th>
+        <th>
+          <h4>Kitten Name</h4>
+        </th>
+        <th>
+          <h4>Edit Kitten</h4>
+        </th>
+        <th>
+          <h4>Delete Kitten</h4>
+        </th>
+      </tr>
+      <% @kittens.each do |kitten| %>
+      <tr>
+
+        <td>
+            <div class="image-frame-sml">
+              <%= image_tag kitten.image_url, class: "kitten-pic" %>
+            </div>
+        </td>
+
+        <td>
+          <div class="kitten-name">
+            <h4><%= link_to kitten.name, kitten_path(kitten) %></h4>
+          </div>
+        </td>
+
+        <td>
+          <div class="kitten-edit">
+            <%= button_to "Edit", edit_kitten_path(kitten), method: :get, class: "btn btn-default"  %>
+          </div>
+        </td>
+
+        <td>
+          <div class="kitten-delete">
+            <%= button_to "Delete", delete_kitten_path(kitten), method: :delete, class: "btn btn-default" %>
+          </div>
+        </td>
+
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

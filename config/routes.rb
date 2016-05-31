@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
+
+  root to: "kittens#index"
+
+  resources :kittens
+  delete "/kittens/:id", to: 'kittens#destroy', as: "delete_kitten"
+  # post "/kittens/:id", to: 'kittens#update', as: "edit_kitten"
+  # The priority is based upon order of creation: first created -> highest priority, as
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
